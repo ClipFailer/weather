@@ -11,7 +11,7 @@ export default function WeatherStatusBlock({ current }: Props) {
 			<Box sx={{ display: 'flex', alignItems: 'center' }}>
 				{Math.ceil(current?.temp_c || 0) > 0 ? '+' : ''}
 				{Math.ceil(current?.temp_c || 0)}
-				{'\u00b0'}, {current?.condition.text}
+				{'\u00b0'} {current?.condition.text}
 				<img src={`${current?.condition.icon}`}></img>
 			</Box>
 			<Typography>{current?.wind_mph} м/с ветер</Typography>

@@ -13,15 +13,34 @@ export default function WeatherLocationBlock({
 }: Props) {
 	return (
 		<Paper elevation={10} sx={{ padding: 2 }}>
-			<Box sx={{ display: 'flex', alignItems: 'center' }}>
-				<Typography variant="h4">
-					<Button
-						variant="text"
-						sx={{ fontSize: '2rem' }}
-						onClick={() => setLocationModal(true)}
+			<Box
+				sx={{
+					display: 'flex',
+					flexDirection: { xs: 'column', sm: 'row' },
+					gap: { sm: '1rem' },
+					alignItems: 'center',
+					justifyContent: { xs: 'center', sm: 'space-between' },
+				}}
+			>
+				<Button
+					variant="text"
+					sx={{ fontSize: { xs: '2rem' }, width: '70%', padding: '1rem' }}
+					onClick={() => setLocationModal(true)}
+				>
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+						}}
 					>
-						{location?.name}, {location?.country}
-					</Button>{' '}
+						{location?.name}
+						<Typography sx={{ display: { xs: 'none', sm: 'initial' } }}>
+							{location?.country}
+						</Typography>
+					</Box>
+				</Button>{' '}
+				<Typography variant="h4" sx={{ fontSize: { sm: '3rem' } }}>
 					{location?.localtime.slice(-5)}
 				</Typography>
 			</Box>

@@ -1,19 +1,27 @@
 import { Container, CssBaseline, ThemeProvider } from '@mui/material'
-import { Provider } from 'react-redux'
-import store from '../../store/store'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectTheme, updateTheme } from '../../store/themeSlice'
 import '../../styles/index.css'
-import { darkTheme } from '../../styles/themes'
+import { getTheme } from '../../styles/themes'
+import Header from '../Header/Header'
 import Router from '../Router/Router'
 
 export default function App() {
+	const theme = useSelector(selectTheme)
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(updateTheme(getTheme()))
+	}, [])
+
 	return (
-		<Provider store={store}>
-			<ThemeProvider theme={darkTheme}>
-				<CssBaseline />
-				<Container sx={{ marginTop: 5 }}>
-					<Router />
-				</Container>
-			</ThemeProvider>
-		</Provider>
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Container sx={{ marginTop: 5 }}>
+				<Header />
+				<Router />
+			</Container>
+		</ThemeProvider>
 	)
 }

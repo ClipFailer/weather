@@ -30,13 +30,13 @@ export default function Weather() {
 		<div>
 			<Paper elevation={10} sx={{ padding: 2 }}>
 				<Grid2 container spacing={2}>
-					<Grid2 size={12}>
+					<Grid2 sx={{ margin: 'auto' }}>
 						<WeatherLocationBlock
 							location={data?.location}
 							setLocationModal={setLocationModal}
 						/>
 					</Grid2>
-					<Grid2>
+					<Grid2 size={12}>
 						<WeatherStatusBlock current={data?.current} />
 					</Grid2>
 				</Grid2>

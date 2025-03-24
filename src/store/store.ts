@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { weatherApi } from '../services/weatherApi'
 import locationSlice from './locationSlice'
+import themeSlice from './themeSlice'
 
 const store = configureStore({
 	reducer: {
 		[weatherApi.reducerPath]: weatherApi.reducer,
 		locationSlice,
+		themeSlice,
 	},
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware().concat(weatherApi.middleware),

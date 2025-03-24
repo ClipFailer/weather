@@ -1,3 +1,4 @@
+
 // Тип для локации
 export interface Location {
 	name: string
@@ -49,3 +50,9 @@ export interface WeatherResponse {
 	location: Location
 	current: Current
 }
+
+export enum ThemeEnum  {
+	LIGHT = 'lightTheme',
+	DARK = 'darkTheme',
+}
+

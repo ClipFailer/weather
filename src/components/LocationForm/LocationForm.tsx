@@ -1,3 +1,4 @@
+import { Container } from '@mui/material'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
@@ -28,24 +29,26 @@ export default function LocationForm({ onSubmit }: Props) {
 	}
 
 	return (
-		<Paper
-			sx={modalStyles}
-			component={'form'}
-			onSubmit={e => onSubmit(e, location)}
-		>
-			<Stack spacing={2}>
-				<Typography variant="h5">Выберите локацию</Typography>
-				<TextField
-					name="location"
-					label="Локация"
-					variant="outlined"
-					value={location}
-					onChange={onChange}
-				/>
-				<Button variant="contained" type="submit">
-					Выбрать
-				</Button>
-			</Stack>
-		</Paper>
+		<Container>
+			<Paper
+				sx={modalStyles}
+				component={'form'}
+				onSubmit={e => onSubmit(e, location)}
+			>
+				<Stack spacing={2}>
+					<Typography variant="h5">Выберите локацию</Typography>
+					<TextField
+						name="location"
+						label="Локация"
+						variant="outlined"
+						value={location}
+						onChange={onChange}
+					/>
+					<Button variant="contained" type="submit">
+						Выбрать
+					</Button>
+				</Stack>
+			</Paper>
+		</Container>
 	)
 }
