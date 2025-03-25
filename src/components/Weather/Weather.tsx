@@ -1,9 +1,10 @@
-import { Backdrop, CircularProgress, Grid2 } from '@mui/material'
+import { Alert, Backdrop, CircularProgress, Grid2 } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetWeatherQuery } from '../../services/weatherApi'
 import { selectLocation, updateLocation } from '../../store/locationSlice'
+import { ApiError } from '../../types'
 import LocationForm from '../LocationForm/LocationForm'
 import Modal from '../Modal/Modal'
 import WeatherForecastBlock from '../WeatherForecastBlock/WeatherForecastBlock'
@@ -27,6 +28,21 @@ export default function Weather() {
 		setLocationModal(false)
 	}
 
+	if (isLoading) {
+		return (
+			<Backdrop open={isLoading}>
+				<CircularProgress color="inherit" />
+			</Backdrop>
+		)
+	}
+
+	if (isError)
+		return (
+			<Alert severity="error">
+				{(error as ApiError).data?.error?.code || 'Произошла ошибка!'}
+			</Alert>
+		)
+
 	return (
 		<div>
 			<Paper elevation={10} sx={{ padding: 2 }}>
@@ -46,9 +62,6 @@ export default function Weather() {
 						/>
 					</Grid2>
 				</Grid2>
-				<Backdrop open={isLoading}>
-					<CircularProgress color="inherit" />
-				</Backdrop>
 			</Paper>
 
 			{locationModal && (

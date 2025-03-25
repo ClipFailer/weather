@@ -208,3 +208,13 @@ export const months: Record<string, string> = {
 	'11': 'Ноября',
 	'12': 'Декабря',
 }
+
+export type ApiError = {
+	status?: number
+	data?: {
+		error?: {
+			message?: string
+			code?: string
+		}
+	}
+}
