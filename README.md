@@ -1,12 +1,10 @@
 <h1>Приложение - Погода</h1>
-<<<<<<< HEAD
 <h2>Стек</h2>
 <ul>
   <li>React (TypeScript)</li>
   <li>Redux + rtk-query</li>
   <li>Material UI</li>
 </ul>
-=======
 
 <h2><a href="https://weather-five-omega-52.vercel.app/">Развёрнутое приложение</a></h2>
 
