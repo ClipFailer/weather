@@ -1,54 +1,42 @@
-# React + TypeScript + Vite
+<h1>Приложение - Погода</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2><a href="https://weather-five-omega-52.vercel.app/">Развёрнутое приложение</a></h2>
 
-Currently, two official plugins are available:
+<h2>Стек</h2>
+<ul>
+  <li>React (Typescript)</li>
+  <li>Redux + rtk-query</li>
+  <li>Material UI</li>
+</ul>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>Основные функции приложения</h2>
+<ul>
+  <li>Выбор города для показа погоды</li>
+  <li>Показ погоды на день
+    <ul>
+      <li>Температура</li>
+      <li>Погодные условия</li>
+      <li>Температура по ощущению</li>
+      <li>Скорость ветра</li>
+      <li>Влажность</li>
+      <li>Давление</li>
+    </ul>
+  </li>
+  <li>Прогноз погоды на неделю 
+    <ul>
+      <li>Дата</li>
+      <li>Средняя температура за день</li>
+    </ul>
+  </li>
+</ul>
 
-## Expanding the ESLint configuration
+<h2>API</h2>
+<p>Приложение использует стороннее API для получения данных о погоде - <a href="https://www.weatherapi.com/">WeatherAPI</a></p>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+<h2>Запуск приложения</h2>
+<ul>
+  <li>
+    Для запуска на локальном сервере: <code>npm run dev</code>
+  </li>
+  <li>
+    Для сборки: <code>npm run build</code>
