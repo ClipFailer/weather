@@ -45,7 +45,7 @@ export default function Weather() {
 
 	return (
 		<div>
-			<Paper elevation={10} sx={{ padding: 2 }}>
+			<Paper elevation={10} sx={{ padding: 2, marginBottom: '2rem' }}>
 				<Grid2 container spacing={2}>
 					<Grid2 sx={{ margin: 'auto' }}>
 						<WeatherLocationBlock
