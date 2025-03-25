@@ -46,4 +46,5 @@
   </li>
   <li>
     Для сборки: <code>npm run build</code>
->>>>>>> 82de73a53c297eb74be5fc4ead68eec1121f0f7e
+  </li>
+</ul>
