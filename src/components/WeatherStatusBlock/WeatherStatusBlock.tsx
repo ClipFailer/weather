@@ -13,14 +13,22 @@ export default function WeatherStatusBlock({ current }: Props) {
 		<Paper
 			elevation={10}
 			sx={{
-				padding: '1rem',
+				padding: '2rem',
 				display: 'flex',
 				flexDirection: { xs: 'column', md: 'row' },
 				justifyContent: { xs: 'center', md: 'space-between' },
 				alignItems: 'center',
 			}}
 		>
-			<Box sx={{ display: 'flex', alignItems: 'center' }}>
+			<Box
+				sx={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					flexWrap: 'wrap',
+					marginBottom: '0.5rem',
+				}}
+			>
 				<Typography sx={{ fontSize: '3rem' }}>
 					{Math.round(current?.temp_c || 0) > 0 ? '+' : ''}
 					{Math.round(current?.temp_c || 0)}

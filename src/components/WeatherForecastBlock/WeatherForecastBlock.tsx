@@ -9,7 +9,12 @@ export default function WeatherForecastBlock({ forecast }: Props) {
 	return (
 		<Paper
 			elevation={10}
-			sx={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}
+			sx={{
+				display: 'flex',
+				justifyContent: 'space-around',
+				flexWrap: 'wrap',
+				padding: '1rem',
+			}}
 		>
 			{forecast?.map(f => {
 				const date = f.date.split('-')

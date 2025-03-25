@@ -19,7 +19,7 @@ export default function WeatherLocationBlock({
 					flexDirection: { xs: 'column', sm: 'row' },
 					gap: { sm: '1rem' },
 					alignItems: 'center',
-					justifyContent: { xs: 'center', sm: 'space-between' },
+					justifyContent: { xs: 'center', sm: 'space-around' },
 				}}
 			>
 				<Button
