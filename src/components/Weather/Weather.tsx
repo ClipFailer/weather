@@ -17,7 +17,7 @@ export default function Weather() {
 
 	const location = useSelector(selectLocation)
 
-	const { data, isLoading } = useGetWeatherQuery(
+	const { data, isLoading, error, isError } = useGetWeatherQuery(
 		location || JSON.stringify(localStorage.getItem('location'))
 	)
 

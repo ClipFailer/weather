@@ -29,7 +29,7 @@ export default function WeatherForecastBlock({ forecast }: Props) {
 						}}
 					>
 						<Box sx={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-							<Typography sx={{ fontSize: '1.8rem' }}>{date[2]}</Typography>
+							<Typography sx={{ fontSize: '2rem' }}>{date[2]}</Typography>
 							<Typography>{months[month]}</Typography>
 						</Box>
 						<Box
