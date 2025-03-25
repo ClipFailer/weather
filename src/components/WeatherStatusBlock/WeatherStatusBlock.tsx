@@ -1,4 +1,4 @@
-import AirIcon from '@mui/icons-material/air'
+import AirIcon from '@mui/icons-material/Air'
 import StraightenIcon from '@mui/icons-material/Straighten'
 import WaterDropIcon from '@mui/icons-material/WaterDrop'
 import { Box, Paper, Typography } from '@mui/material'
