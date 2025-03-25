@@ -20,21 +20,21 @@ export const weatherSlice = createSlice({
 	reducers: {},
 	extraReducers: builder => {
 		builder.addMatcher(
-			weatherApi.endpoints.getCurrentWeather.matchPending,
+			weatherApi.endpoints.getWeather.matchPending,
 			state => {
 				state.error = null
 				state.isLoading = true
 			}
 		)
 		builder.addMatcher(
-			weatherApi.endpoints.getCurrentWeather.matchFulfilled,
+			weatherApi.endpoints.getWeather.matchFulfilled,
 			(state, action) => {
 				state.isLoading = false
 				state.data = action.payload
 			}
 		)
 		builder.addMatcher(
-			weatherApi.endpoints.getCurrentWeather.matchRejected,
+			weatherApi.endpoints.getWeather.matchRejected,
 			(state, action) => {
 				state.error = action.error.message
 				state.isLoading = false

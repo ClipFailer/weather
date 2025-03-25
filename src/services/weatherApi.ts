@@ -8,15 +8,16 @@ export const weatherApi = createApi({
 	reducerPath: 'weatherApi',
 	baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
 	endpoints: builder => ({
-		getCurrentWeather: builder.query<WeatherResponse, string>({
+		getWeather: builder.query<WeatherResponse, string>({
 			query: (city: string) => ({
-				url: '/current.json',
+				url: 'forecast.json',
 				method: 'GET',
 				params: {
 					key: WEATHER_API,
 					q: city,
 					aqi: 'no',
 					lang: 'ru',
+					days: '7',
 				},
 			}),
 		}),
@@ -24,7 +25,7 @@ export const weatherApi = createApi({
 })
 
 export const {
-	endpoints: { getCurrentWeather },
+	endpoints: { getWeather },
 } = weatherApi
 
-export const { useGetCurrentWeatherQuery } = weatherApi
+export const { useGetWeatherQuery } = weatherApi

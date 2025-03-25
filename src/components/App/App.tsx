@@ -1,21 +1,18 @@
 import { Container, CssBaseline, ThemeProvider } from '@mui/material'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { selectTheme, updateTheme } from '../../store/themeSlice'
 import '../../styles/index.css'
-import { getTheme } from '../../styles/themes'
+import { lightTheme } from '../../styles/themes'
 import Router from '../Router/Router'
 
 export default function App() {
-	const theme = useSelector(selectTheme)
-	const dispatch = useDispatch()
+	// const theme = useSelector(selectTheme)
+	// const dispatch = useDispatch()
 
-	useEffect(() => {
-		dispatch(updateTheme(getTheme()))
-	}, [])
+	// useEffect(() => {
+	// 	dispatch(updateTheme(getTheme()))
+	// }, [])
 
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={lightTheme}>
 			<CssBaseline />
 			<Container sx={{ marginTop: 5 }}>
 				<Router />

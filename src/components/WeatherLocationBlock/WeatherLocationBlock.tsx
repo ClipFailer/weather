@@ -36,7 +36,9 @@ export default function WeatherLocationBlock({
 					>
 						{location?.name}
 						<Typography sx={{ display: { xs: 'none', sm: 'initial' } }}>
-							{location?.country}
+							{location?.country === 'Украина'
+								? 'Хохляндия'
+								: location?.country}
 						</Typography>
 					</Box>
 				</Button>{' '}

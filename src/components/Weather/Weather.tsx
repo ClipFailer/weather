@@ -2,10 +2,11 @@ import { Backdrop, CircularProgress, Grid2 } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useGetCurrentWeatherQuery } from '../../services/weatherApi'
+import { useGetWeatherQuery } from '../../services/weatherApi'
 import { selectLocation, updateLocation } from '../../store/locationSlice'
 import LocationForm from '../LocationForm/LocationForm'
 import Modal from '../Modal/Modal'
+import WeatherForecastBlock from '../WeatherForecastBlock/WeatherForecastBlock'
 import WeatherLocationBlock from '../WeatherLocationBlock/WeatherLocationBlock'
 import WeatherStatusBlock from '../WeatherStatusBlock/WeatherStatusBlock'
 
@@ -16,7 +17,7 @@ export default function Weather() {
 
 	const location = useSelector(selectLocation)
 
-	const { data, isLoading } = useGetCurrentWeatherQuery(
+	const { data, isLoading } = useGetWeatherQuery(
 		location || JSON.stringify(localStorage.getItem('location'))
 	)
 
@@ -38,6 +39,11 @@ export default function Weather() {
 					</Grid2>
 					<Grid2 size={12}>
 						<WeatherStatusBlock current={data?.current} />
+					</Grid2>
+					<Grid2 size={12}>
+						<WeatherForecastBlock
+							forecast={data?.forecast.forecastday.slice(1)}
+						/>
 					</Grid2>
 				</Grid2>
 				<Backdrop open={isLoading}>
